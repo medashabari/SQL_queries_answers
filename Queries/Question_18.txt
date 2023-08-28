@@ -1,0 +1,13 @@
+SELECT
+    point1.id AS point1_id,
+    point1.x AS point1_x,
+    point1.y AS point1_y,
+    point2.id AS point2_id,
+    point2.x AS point2_x,
+    point2.y AS point2_y,
+    SQRT(POW(point2.x - point1.x, 2) + POW(point2.y - point1.y, 2)) AS distance
+FROM points AS point1
+CROSS JOIN points AS point2
+WHERE point1.id <> point2.id
+ORDER BY distance
+LIMIT 1;

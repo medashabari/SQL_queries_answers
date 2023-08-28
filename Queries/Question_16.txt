@@ -1,0 +1,1 @@
+select company, avg(salary) as MedianSalary from company groupby companyid;
